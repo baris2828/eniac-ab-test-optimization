@@ -1,5 +1,7 @@
 # Eniac A/B Test — Optimizing the Homepage Call-to-Action
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DEIN_USER/DEIN_REPO/blob/main/notebooks/main_analysis.ipynb)
+
 Statistical analysis of a four-way A/B test designed to find the highest-performing call-to-action (CTA) button on the Eniac homepage. The study combines a Chi-Square test of independence with Bonferroni-corrected pairwise post-hoc tests and complements statistical significance with business-oriented metrics (relative lift, drop-off rate, homepage-return rate).
 
 ---
