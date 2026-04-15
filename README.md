@@ -80,20 +80,21 @@ Statistical significance is complemented by the **relative lift** of each varian
 
 | Version | CTR (↑) | Drop-off rate (↓) | Homepage-return rate (↓) |
 |:-------:|:-------:|:-----------------:|:------------------------:|
-| A       |  2.02%  |       38.5%       |           4.1%           |
+| **A**   |  2.02%  |     **62.0%**     |           5.3%           |
 | B       |  1.14%  |       n/a         |           n/a            |
-| **C**   | **2.12%** |    **18.2%**      |         **2.3%**         |
-| D       |  0.76%  |       61.8%       |           4.6%           |
+| **C**   | **2.12%** |     71.5%       |           4.7%           |
+| **D**   |  0.76%  |       69.5%       |         **2.6%**         |
 
-Drop-off and homepage-return rates were not available as CSV exports; values are read from the LMS dashboards. Version B tracking failed during the window.
+Drop-off and homepage-return rates were not available as CSV exports; values are read from the LMS dashboards. Version B tracking failed during the window, so B is missing on both supplementary metrics. **Bold cells mark the best (lowest / highest) value per column.**
 
 ![Eniac A/B test results](images/Eniac_A_B_Test_Results.png)
 
 **Interpretation.**
 
 - **Color is the dominant driver.** White buttons win decisively over red buttons on CTR.
-- **Label is a secondary effect.** `SEE DEALS` edges out `SHOP NOW` but not to a statistically significant degree on CTR alone.
-- **C dominates supplementary metrics.** Users arriving via the `SEE DEALS` label drop off less and return to the homepage less often — a strong signal that the label sets better expectations for the destination page.
+- **Label is a secondary effect.** `SEE DEALS` (C) edges out `SHOP NOW` (A) on CTR, but the gap is not statistically significant on its own.
+- **Supplementary metrics are a trade-off, not a clean win.** Version **A** has the lowest drop-off rate (~62% vs. C's ~71.5%) — more users stay on the landing page. Version **D** has the lowest return rate (~2.6% vs. C's ~4.7%) — fewest post-click regrets. Version **C** sits between them on both: it keeps post-click users engaged better than A, at the cost of more users dropping off the landing page before they click.
+- The LMS dashboards report point estimates without confidence intervals, so these supplementary metrics are directional — they support the CTR analysis rather than override it.
 
 ---
 
@@ -101,14 +102,14 @@ Drop-off and homepage-return rates were not available as CSV exports; values are
 
 **Roll out Version C — the white `SEE DEALS` button.**
 
-1. **Statistically**, C is tied with the current-best baseline A and significantly beats both red variants.
-2. **Directionally**, C has the highest observed CTR and a ~5% relative lift over A.
-3. **Holistically**, C has the lowest drop-off rate and the lowest homepage-return rate of all measurable variants — it wins on every supporting metric.
-4. **Risk is low**: A and C are statistically equivalent on CTR, so switching from A to C cannot hurt CTR at the sample sizes tested.
+1. **Statistically**, C is tied with the current-best baseline A and significantly beats both red variants. Color is the dominant, statistically proven driver.
+2. **Directionally**, C has the highest observed CTR (2.12%) and a ~5% relative lift over A — the largest observed lift on the only metric we can test rigorously.
+3. **Supplementary metrics are mixed, not a clean win for C.** A has the lower drop-off rate, D has the lower return rate, and C sits between them on both. These LMS numbers come without confidence intervals (and B is missing entirely), so they are directional — they do not override the CTR result but do introduce a caveat.
+4. **Risk is contained.** A and C are statistically equivalent on CTR, so switching from A to C cannot hurt CTR at the sample sizes tested. The drop-off gap is the main open question, which the follow-up test below is designed to resolve.
 
 **Next steps.**
 - Monitor post-launch CTR and downstream conversion for two weeks.
-- If the A-vs-C question becomes business-critical, run a follow-up two-arm test with a larger sample to reach the required statistical power.
+- Run a confirmatory **A vs. C head-to-head** test instrumented across the full funnel (landing → click → purchase → homepage return) so the drop-off / return-rate trade-off can be resolved on measured revenue rather than on directional dashboards.
 
 ![Power calculator for experiment duration](images/power_calculator_to_calculate_the_experiment_duration.png)
 
