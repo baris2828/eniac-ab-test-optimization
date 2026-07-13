@@ -1,6 +1,8 @@
-pandas>=2.0
-numpy>=1.24
-scipy>=1.10
-matplotlib>=3.7
-seaborn>=0.12
-jupyter>=1.0
+# Pinned to the versions used to run notebooks/01_eniac_ab_test_analysis.ipynb
+# (reproducible results).
+pandas==2.3.3
+numpy==2.3.5
+scipy==1.16.3
+matplotlib==3.10.6
+seaborn==0.13.2
+jupyter==1.1.1
