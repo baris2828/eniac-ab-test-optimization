@@ -107,3 +107,8 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Local-only source images (kept on disk, intentionally not tracked in the repo)
+images/optimizing_click_through_rate_CTR.png
+images/Purchase_Funnel_conversation_rates.png
+images/Purchase_Funnel_specific_conversation_rates.png
